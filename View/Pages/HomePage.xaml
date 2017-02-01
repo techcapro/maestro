@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Maestro.HomePage" xmlns:local="clr-namespace:Maestro">
+	<ContentPage.Content>
+		<StackLayout Orientation="Vertical" Spacing="0">
+			<StackLayout BackgroundColor="#543669" VerticalOptions="Start">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="40" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="50">
+						</ColumnDefinition>
+						<ColumnDefinition Width="*">
+						</ColumnDefinition>
+						<ColumnDefinition Width="50">
+						</ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Button IsVisible="false" x:Name="btnMenu" BackgroundColor="Transparent" Image="ic_dehaze_white.png" Grid.Row="0" Grid.Column="0" />
+					<Image VerticalOptions="Center" HeightRequest="28" Grid.Row="0" Grid.Column="1" Source="maestro_header_top.png">
+					</Image>
+					<Image Grid.Row="0" Grid.Column="2" IsVisible="false" Source="ic_home_white_24dp.png">
+					</Image>
+				</Grid>
+			</StackLayout>
+			<StackLayout VerticalOptions="FillAndExpand" Spacing="0">
+				<StackLayout Margin="10" Spacing="0" VerticalOptions="Start">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="4*" />
+							<ColumnDefinition Width="2*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<Picker Grid.Column="0" Grid.Row="0" x:Name="pckHospital" SelectedIndexChanged="pckHospital_SelectedIndexChanged" TextColor="#543669" HorizontalOptions="FillAndExpand">
+						</Picker>
+						<Frame x:Name="frmAlertTypeSelected" HasShadow="false" Padding="2,5,2,5" Margin="0,0,0,0" BackgroundColor="#543669" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" OutlineColor="Transparent">
+							<StackLayout x:Name="stckFilterClicked" Orientation="Horizontal" Margin="0" Padding="0" HorizontalOptions="FillAndExpand">
+								<Image Source="filter" WidthRequest="16" VerticalOptions="Center" HeightRequest="16">
+								</Image>
+								<Label x:Name="lblFilterText" Text="All" TextColor="#FFFFFF" VerticalOptions="Center" FontSize="13">
+								</Label>
+							</StackLayout>
+						</Frame>
+					</Grid>
+				</StackLayout>
+				<StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#c1c1c1" Padding="10" Spacing="0">
+					<ListView x:Name="lstAlertNewsFeed" Refreshing="lstAlertNewsFeed_Refreshing" IsPullToRefreshEnabled="true" ItemTapped="lstAlertNewsFeed_ItemTapped" HasUnevenRows="true" SeparatorVisibility="None" VerticalOptions="FillAndExpand">
+						<!--<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell x:Name="vcAlertNewsFeed">
+									<ViewCell.ContextActions>
+										<MenuItem Icon="icon" Text="Reply" CommandParameter="{Binding .}" Clicked="mnItmReplyAlert" />
+										<MenuItem Icon="icon" Text="Remove" CommandParameter="{Binding .}" Clicked="mnItmRemove" />
+										<MenuItem Icon="icon" Text="Save" CommandParameter="{Binding .}" Clicked="mnItmSave" />
+									</ViewCell.ContextActions>
+									<local:AlertNewsFeedCell />
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>-->
+					</ListView>
+				</StackLayout>
+			</StackLayout>
+			<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="End" Padding="10" BackgroundColor="#543669">
+				<Label Text="Copyright © 2016 Applied Logic, Inc. All Rights Reserved." FontSize="11" TextColor="#FFFFFF" HorizontalTextAlignment="Center">
+				</Label>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Maestro.CreateProfilePage">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout>
+				<Image Source="maestro_logo.png" Margin="0,10,0,0" WidthRequest="200" HorizontalOptions="CenterAndExpand">
+				</Image>
+				<StackLayout
+					Spacing="20"
+					Margin="20">
+					<Label
+						HorizontalTextAlignment="Center"
+						FontSize="14"
+						FontAttributes="Bold"
+						Text="Create Profile">
+					</Label>
+					<Entry
+						PlaceholderColor="Gray"
+						HorizontalTextAlignment="Center"
+						Placeholder="First Name">
+					</Entry>
+					<Entry
+						PlaceholderColor="Gray"
+						HorizontalTextAlignment="Center"
+						Placeholder="Last Name">
+					</Entry>
+					<StackLayout
+						Orientation="Horizontal">
+						<StackLayout>
+							<Label
+								FontSize="14"
+								FontAttributes="Bold"
+								Text="Upload Profile Picture">
+							</Label>
+							<Label
+								FontSize="10"
+								Text="Maximum size 8 Mb. JPG, PNG">
+							</Label>
+						</StackLayout>
+						<StackLayout
+							HorizontalOptions="EndAndExpand">
+							<Image
+								HorizontalOptions="EndAndExpand"
+								Source="icon.png">
+							</Image>
+						</StackLayout>
+					</StackLayout>
+					<Picker
+						x:Name="pckStaffType"
+						HorizontalOptions="FillAndExpand"
+						SelectedIndex="0">
+						<Picker.Items>
+							<x:String>Staff Type</x:String>
+							<x:String>Staff Type 1</x:String>
+						</Picker.Items>
+					</Picker>
+					<Label
+						HorizontalTextAlignment="Start"
+						FontSize="14"
+						FontAttributes="Bold"
+						Text="Login Information">
+					</Label>
+					<Entry
+						PlaceholderColor="Gray"
+						HorizontalTextAlignment="Center"
+						Placeholder="Email">
+					</Entry>
+					<Entry
+						PlaceholderColor="Gray"
+						HorizontalTextAlignment="Center"
+						Placeholder="Password">
+					</Entry>
+					<StackLayout
+						Orientation="Horizontal"
+						HorizontalOptions="CenterAndExpand">
+						<StackLayout>
+							<Label
+								FontSize="10"
+								Text="● One lowercase character">
+							</Label>
+							<Label
+								FontSize="10"
+								Text="● One uppercase character">
+							</Label>
+						</StackLayout>
+						<StackLayout>
+							<Label
+								FontSize="10"
+								Text="● Eight Characters minimum">
+							</Label>
+							<Label
+								FontSize="10"
+								Text="● One Number">
+							</Label>
+						</StackLayout>
+					</StackLayout>
+					<Entry
+						PlaceholderColor="Gray"
+						HorizontalTextAlignment="Center"
+						Placeholder="Confirm Password">
+					</Entry>
+					<Button
+						BackgroundColor="Transparent"
+						Text="Next"
+							x:Name="btnNext"
+							Clicked="btnNext_Clicked"
+						HorizontalOptions="CenterAndExpand">
+					</Button>
+				</StackLayout>
+				<Label Text="Copyright © 2016 Applied Logic, Inc. All Rights Reserved." Margin="20" FontSize="14" FontAttributes="Bold" TextColor="#c7c9cb" HorizontalOptions="Center" HorizontalTextAlignment="Center">
+				</Label>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

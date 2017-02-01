@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:local="clr-namespace:Maestro" x:Class="Maestro.Pages.AlertDetailsPage">
+	<ContentPage.Content>
+		<StackLayout Spacing="0">
+			<StackLayout VerticalOptions="Start" BackgroundColor="#543669">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="40" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="50">
+						</ColumnDefinition>
+						<ColumnDefinition Width="*">
+						</ColumnDefinition>
+						<ColumnDefinition Width="50">
+						</ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Image x:Name="imgPageBack" Grid.Row="0" Grid.Column="0" Source="ic_keyboard_arrow_left_white_24dp.png">
+					</Image>
+					<Image VerticalOptions="Center" HeightRequest="28" Grid.Row="0" Grid.Column="1" Source="maestro_header_top.png">
+					</Image>
+					<Image x:Name="imgPageHome" HeightRequest="32" VerticalOptions="Center" Grid.Row="0" Grid.Column="2" Source="ic_home_white_24dp.png">
+					</Image>
+				</Grid>
+			</StackLayout>
+			<ScrollView VerticalOptions="FillAndExpand">
+				<StackLayout Spacing="0">
+					<StackLayout VerticalOptions="Start" Margin="10,10,10,0">
+						<Frame HorizontalOptions="CenterAndExpand" Padding="5" Margin="0" OutlineColor="#c5c5c5" BackgroundColor="#FFFFFF" HasShadow="false">
+							<Label x:Name="lblHospitalName" HorizontalTextAlignment="Center" Margin="10,0,10,0" FontAttributes="Bold" TextColor="#543669" FontSize="16">
+							</Label>
+						</Frame>
+						<StackLayout Margin="10">
+							<StackLayout Orientation="Horizontal">
+								<StackLayout>
+									<StackLayout VerticalOptions="Start" Orientation="Horizontal">
+										<Label VerticalOptions="Start" x:Name="lblType" FontAttributes="Bold" TextColor="{Binding TextFontColor}" FontSize="14" Text="{Binding Type}" />
+										<Image IsVisible="false" WidthRequest="20" HeightRequest="20" VerticalOptions="Start" Source="ic_info_outline_black_24dp.png" />
+									</StackLayout>
+									<StackLayout VerticalOptions="Start" Orientation="Horizontal">
+										<local:ContentViewRoundedCorners IsVisible="false" x:Name="cvShowTime" BackgroundColor="{Binding TextFontColor}" VerticalOptions="Center" CornerRadius="10" MinimumWidthRequest="75" MinimumHeightRequest="20">
+											<ContentView.Content>
+												<StackLayout MinimumWidthRequest="70" Orientation="Horizontal" Margin="5,2,5,2">
+													<Image Source="time.png" WidthRequest="14" HeightRequest="14">
+													</Image>
+													<Label TextColor="#FFF" MinimumWidthRequest="40" FontSize="11" Text="{Binding AlertDateTime, StringFormat='{0:HH:mm}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+													</Label>
+												</StackLayout>
+											</ContentView.Content>
+										</local:ContentViewRoundedCorners>
+										<Label x:Name="lblAlertDate" Text="{Binding AlertDateTime, StringFormat='{0:MMM dd, yyyy}'}" VerticalOptions="Center" TextColor="Gray" FontSize="12" />
+									</StackLayout>
+								</StackLayout>
+								<StackLayout x:Name="stckSaveAlert" Spacing="0" HorizontalOptions="EndAndExpand">
+									<Image x:Name="imgSaveUnSaveAlert" HeightRequest="40" WidthRequest="40" HorizontalOptions="Center" Source="ic_save_black_24dp.png" />
+									<Label x:Name="lblSaveUnSaveText" HorizontalOptions="Center" FontSize="12" Text="Save" />
+								</StackLayout>
+							</StackLayout>
+						</StackLayout>
+					</StackLayout>
+					<StackLayout Padding="8" VerticalOptions="FillAndExpand" BackgroundColor="Silver">
+						<Frame Padding="8" OutlineColor="#c5c5c5" BackgroundColor="#FFFFFF" HasShadow="false">
+							<StackLayout>
+								<StackLayout x:Name="myCarousel">
+									<Grid ColumnSpacing="2" RowSpacing="10">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="*" />
+										</Grid.ColumnDefinitions>
+										<StackLayout Grid.Row="0" Grid.Column="0">
+											<Label Text="Surgeon" Style="{StaticResource boldLabelStyle}" />
+											<Label x:Name="lblSurgeon" Style="{StaticResource normalLabelStyle}" Text="{Binding Surgeon}" />
+										</StackLayout>
+										<StackLayout Grid.Row="0" Grid.Column="1">
+											<Label Text="Manufacturer" Style="{StaticResource boldLabelStyle}" />
+											<Label x:Name="lblManufacturer" Style="{StaticResource normalLabelStyle}" Text="{Binding Manufacturer}" />
+										</StackLayout>
+									</Grid>
+									<Grid ColumnSpacing="2" RowSpacing="10">
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="*" />
+											<ColumnDefinition Width="*" />
+										</Grid.ColumnDefinitions>
+										<StackLayout Grid.Row="0" Grid.Column="0">
+											<Label Text="Checked In by (staff)" Style="{StaticResource boldLabelStyle}" />
+											<Label x:Name="lblCheckInNotes" Style="{StaticResource normalLabelStyle}" Text="{Binding CheckInNotes}" />
+										</StackLayout>
+										<StackLayout Grid.Row="0" Grid.Column="1">
+											<Label Text="Manufacturer Rep" Style="{StaticResource boldLabelStyle}" />
+											<Label x:Name="lblManufacturerRep" Style="{StaticResource normalLabelStyle}" Text="{Binding ManufacturerRep}" />
+										</StackLayout>
+									</Grid>
+									<StackLayout>
+										<Label Text="Late Reason" Style="{StaticResource boldLabelStyle}" />
+										<Label x:Name="lblLateReason" Style="{StaticResource normalLabelStyle}" Text="{Binding LateReason}" />
+									</StackLayout>
+									<StackLayout x:Name="stckMoreDetailsAlerts" IsVisible="false">
+										<Label Text="Inventory Name(s)" Style="{StaticResource boldLabelStyle}" />
+										<Label x:Name="lblInventory" Style="{StaticResource normalLabelStyle}" Text="{Binding Inventory}" />
+									</StackLayout>
+								</StackLayout>
+								<Image Source="close_section.png" x:Name="imgShowHideToggle" HorizontalOptions="Center">
+								</Image>
+							</StackLayout>
+						</Frame>
+					</StackLayout>
+				</StackLayout>
+			</ScrollView>
+			<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="10" BackgroundColor="#543669">
+				<Label Text="Copyright © 2016 Applied Logic, Inc. All Rights Reserved." FontSize="11" TextColor="#FFFFFF" HorizontalTextAlignment="Center">
+				</Label>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

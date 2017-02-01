@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Maestro.Pages.LoginPage">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout VerticalOptions="FillAndExpand">
+				<Image Source="maestro_logo.png" Margin="50,10,50,0" WidthRequest="200" HorizontalOptions="CenterAndExpand">
+				</Image>
+				<StackLayout Margin="20">
+					<Entry x:Name="txtEmail" Keyboard="Email" Text="nirmal.subedi@randstadusa.com" Placeholder="Email" HorizontalTextAlignment="Center" Margin="0,5,0,10" />
+					<Entry x:Name="txtPassword" IsPassword="true" Text="Aa123789%" Placeholder="Password" HorizontalTextAlignment="Center">
+					</Entry>
+					<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+						<Label Text="Forget Password?" />
+						<Label Style="{StaticResource linkLabelStyle}" Text="Click here for help" />
+					</StackLayout>
+					<StackLayout x:Name="stkRememberMe" HorizontalOptions="Center" Orientation="Horizontal">
+						<Label VerticalOptions="Center" Text="Remember Me" />
+						<Image Scale="0.7" Source="ic_check_circle_black_24dp.png" />
+					</StackLayout>
+					<Button x:Name="btnLogin" Style="{StaticResource buttonStyle}" Text="Login" Clicked="btnLogin_Clicked">
+					</Button>
+					<Label Margin="20,30,20,30" Text="Maestro by ABACUS Technology respects your privacy and takes protecting it seriously. Your email address will not be shared with a third party, nor will it be sold or used for purposes other than application alerts, updates and internal messaging.">
+					</Label>
+					<StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+						<Label Style="{StaticResource linkLabelStyle}" Text="Terms of Service" />
+						<Label Text="and">
+						</Label>
+						<Label Style="{StaticResource linkLabelStyle}" Text="Privacy Policy" />
+					</StackLayout>
+				</StackLayout>
+				<Label Text="Copyright © 2016 Applied Logic, Inc. All Rights Reserved." Margin="20" FontSize="14" FontAttributes="Bold" TextColor="#c7c9cb" HorizontalOptions="Center" HorizontalTextAlignment="Center">
+				</Label>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

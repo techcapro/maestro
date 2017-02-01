@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<local:XViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Maestro.AlertNewsFeedCell" xmlns:local="clr-namespace:Maestro">
+	<ViewCell.ContextActions>
+		<MenuItem Icon="icon" Text="Save" />
+		<MenuItem Icon="icon" Text="Reply" />
+		<MenuItem Icon="icon" Text="Delete" />
+	</ViewCell.ContextActions>
+	<ViewCell.View>
+		<StackLayout x:Name="lytMain" BackgroundColor="{Binding ItemSelectedColor}">
+			<StackLayout Padding="10" Spacing="0">
+				<StackLayout Orientation="Horizontal">
+					<Image WidthRequest="16" HeightRequest="16" Source="{Binding IconPathCategory}">
+					</Image>
+					<Label TextColor="{Binding TextFontColor}" Text="{Binding Type}" FontAttributes="Bold" FontSize="14">
+					</Label>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal" Margin="25,10,25,0">
+					<Label Text="Processed Date:" FontAttributes="Bold" FontSize="12" TextColor="#666666">
+					</Label>
+					<Label Text="{Binding ProcessedDate, StringFormat='{0:MMM dd, yyyy}'}" FontSize="12">
+					</Label>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal" Margin="25,5,25,15">
+					<Label Text="Manufacturer:" FontAttributes="Bold" FontSize="12" TextColor="#666666">
+					</Label>
+					<Label Text="{Binding Manufacturer}" FontSize="12">
+					</Label>
+				</StackLayout>
+				<StackLayout Orientation="Horizontal">
+					<local:ContentViewRoundedCorners BackgroundColor="{Binding TextFontColor}" VerticalOptions="Center" CornerRadius="10" MinimumHeightRequest="20">
+						<ContentView.Content>
+							<StackLayout Orientation="Horizontal" Margin="5,2,5,2">
+								<Image Source="time.png" WidthRequest="14" HeightRequest="14">
+								</Image>
+								<Label TextColor="#FFF" FontSize="11" Text="{Binding AlertDateTime, StringFormat='{0:HH:mm}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">
+								</Label>
+							</StackLayout>
+						</ContentView.Content>
+					</local:ContentViewRoundedCorners>
+					<Label FontSize="11" TextColor="#777" Text="{Binding AlertDateTime, StringFormat='{0:MMM dd, yyyy}'}" VerticalOptions="Center" VerticalTextAlignment="Center">
+					</Label>
+					<Label FontSize="11" TextColor="#777" FontAttributes="Italic" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding AlertDateTime, StringFormat='Last Reply: {0:MMM dd, yy}'}">
+					</Label>
+				</StackLayout>
+			</StackLayout>
+			<BoxView BackgroundColor="#c5c5c5" HeightRequest="1" />
+		</StackLayout>
+	</ViewCell.View>
+</local:XViewCell>

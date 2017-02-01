@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Maestro.VerifyEmailPage">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout>
+				<Image Source="maestro_logo.png" Margin="0,10,0,0" WidthRequest="200" HorizontalOptions="CenterAndExpand">
+				</Image>
+				<StackLayout Spacing="20" Margin="35">
+					<Label HorizontalTextAlignment="Center" FontSize="14" FontAttributes="Bold" Text="Enter Code">
+					</Label>
+					<Label HorizontalTextAlignment="Center" FontSize="14" Text="We just sent a code to HospitalEmail_MergeCode">
+					</Label>
+					<Entry PlaceholderColor="Gray" HorizontalTextAlignment="Center" Placeholder="Enter 4-digit code">
+					</Entry>
+					<Button BackgroundColor="Transparent" x:Name="btnSubmit" Clicked="btnSubmit_Clicked" Text="Submit" HorizontalOptions="CenterAndExpand">
+					</Button>
+					<Button BackgroundColor="Transparent" Text="Re-Send My Code" HorizontalOptions="CenterAndExpand">
+					</Button>
+					<StackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+						<Label FontSize="11" HorizontalTextAlignment="Center" Text="Are you having issues entering your code?">
+						</Label>
+						<Label FontSize="11" HorizontalTextAlignment="Center" TextColor="Blue" Text="Click here for help.">
+						</Label>
+					</StackLayout>
+				</StackLayout>
+				<Label Text="Copyright © 2016 Applied Logic, Inc. All Rights Reserved." Margin="20" FontSize="14" FontAttributes="Bold" TextColor="#c7c9cb" HorizontalOptions="Center" HorizontalTextAlignment="Center">
+				</Label>
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
